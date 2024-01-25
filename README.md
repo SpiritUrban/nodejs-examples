@@ -12,4 +12,8 @@ Command: npx express-generator
 ## 002-express-ts-boilerplate
 Source: https://github.com/Louis3797/express-ts-boilerplate/tree/main
 
+
+## 003-express-ts-auth-service
+Source: https://github.com/Louis3797/express-ts-auth-service/tree/main
+
  
