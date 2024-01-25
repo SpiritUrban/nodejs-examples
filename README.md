@@ -25,3 +25,5 @@ Source: https://github.com/kutia-software-company/express-typescript-starter
 Source: https://github.com/GeekyAnts/express-typescript/tree/master
 
  
+## 006-nodejs-backend-architecture-typescript
+Source: https://github.com/janishar/nodejs-backend-architecture-typescript/tree/master
