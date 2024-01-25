@@ -20,4 +20,8 @@ Source: https://github.com/Louis3797/express-ts-auth-service/tree/main
 ## 004-express-typescript-starter
 Source: https://github.com/kutia-software-company/express-typescript-starter
 
+
+## 005-express-typescript-master
+Source: https://github.com/GeekyAnts/express-typescript/tree/master
+
  
