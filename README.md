@@ -30,3 +30,6 @@ Source: https://github.com/janishar/nodejs-backend-architecture-typescript/tree/
 
 ## 007-nestjs-api-boilerplate
 Source: https://github.com/MidoAhmed/nestjs-api-boilerplate/tree/master
+
+## 008-diachuk-vitaliy-node-api
+Source: https://github.com/SpiritUrban/ibanan

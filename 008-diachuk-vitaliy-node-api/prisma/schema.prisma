@@ -1,0 +1,141 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+//
+// model User {
+//   id    Int     @id @default(autoincrement())
+//   email String  @unique
+//   name  String?
+// }
+
+
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL_MONGO")
+}
+
+
+// npx prisma migrate dev --name add_room_language_password_to_user
+
+
+model User {
+  // id            String      @id @default(cuid())
+  // id    Int     @id @default(autoincrement())
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  room          String?
+  language      String?
+  isLogged      Boolean?     @default(true)
+  shouldLogout  DateTime?
+  oauthID       Int?
+  created       DateTime?
+  name          String?
+  fullName      String?
+  firstName     String?
+  lastName      String?
+  nickname      String?
+  username      String      @unique
+  openPassword  String?
+  password      String?
+  email         String      @unique
+  emailToken    String?
+  emailVerified Boolean?
+  phoneVerified Boolean?
+  status        String?
+  role          String?
+  iss           String?
+  dateOfBirth   DateTime?
+  active        Boolean?
+  lastLogin     DateTime    @default(now())
+  lastIp        String?
+  avatar        String?
+  sendNotifications Boolean?
+  address       String?
+  city          String?
+  postcode      String?
+  country       String?
+  phone         String?
+  authToken     String?
+  assToken      String?
+  linkedUsers   String[]
+  linkPin       Int?
+  phonePin      Int?
+  lastAppeal    DateTime    @default(now())
+  lastMethod    String?
+  gender        String?
+  skills        String?
+  specialization String?
+  facebook      Facebook?
+  twitter       Twitter?
+  google        Google?
+  wallets       Wallet?
+}
+
+
+ 
+// model User {
+//   id    String @id @default(auto()) @map("_id") @db.ObjectId
+//   posts Post[]
+// }
+
+// model Post {
+//   id       String @id @default(auto()) @map("_id") @db.ObjectId
+//   author   User   @relation(fields: [authorId], references: [id])
+//   authorId String @db.ObjectId // relation scalar field  (used in the `@relation` attribute above)
+// }
+
+model Facebook {
+  // id        String  @id @default(cuid())
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  token     String
+  email     String
+  username  String
+  User      User    @relation(fields: [userId], references: [id])
+  userId    String @unique
+}
+
+model Twitter {
+  // id           String  @id @default(cuid())
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  token        String
+  displayName  String
+  username     String
+  User         User    @relation(fields: [userId], references: [id])
+  userId       String @unique
+}
+
+model Google {
+  // id        String  @id @default(cuid())
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  token     String
+  email     String
+  username  String
+  User      User    @relation(fields: [userId], references: [id])
+  userId    String @unique
+}
+
+model Wallet {
+  // id        String  @id @default(cuid())
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  USD       Currency?
+  User      User    @relation(fields: [userId], references: [id])
+  userId    String @unique
+}
+
+model Currency {
+  // id      String  @id @default(cuid())
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  balance Int
+  Wallet  Wallet  @relation(fields: [walletId], references: [id])
+  walletId String @unique
+}
+
+
