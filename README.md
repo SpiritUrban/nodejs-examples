@@ -27,3 +27,6 @@ Source: https://github.com/GeekyAnts/express-typescript/tree/master
  
 ## 006-nodejs-backend-architecture-typescript
 Source: https://github.com/janishar/nodejs-backend-architecture-typescript/tree/master
+
+## 007-nestjs-api-boilerplate
+Source: https://github.com/MidoAhmed/nestjs-api-boilerplate/tree/master
